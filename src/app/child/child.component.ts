@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -8,7 +8,6 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
 export class ChildComponent implements OnInit {
 
   @Input()
-  @HostBinding(`class.blue`)
   blue = false
 
   constructor() { }
