@@ -1,5 +1,41 @@
+<div>
+  parent works!
+</div>
+
 <p>
-parent works!
+  Sometimes we want to change things that require styling :host element:
+</p>
+<p>
+  Case:
+  If we had styling component: radial-gradient as a background with text in it
+</p>
+<h3>
+  -- Display
+</h3>
+<h5>
+  normally we want it to take whole available space
+</h5>
+<div class="wrapper--available-space">
+  <app-child>child works!</app-child>
+</div>
+
+<h5>
+  But sometimes we want it to act like normal text in a block of text:
+</h5>
+<span>
+  this is a <app-child [type]="'inline'">child component!</app-child> which is awesome
+</span>
+<hr>
+<p>
+  It can work with HostBinding('class') but we can achieve the same result by setting the app-child style inside parent component
 </p>
 
-<app-child></app-child>
+<div class="wrapper--available-space">
+  <app-child-no-binding>child works!</app-child-no-binding>
+</div>
+
+<span>
+  this is a <app-child-no-binding class="gradient-text--inline">child component!</app-child-no-binding> which is awesome
+</span>
+
+<h5>The positioning of a child should be parent's responsibility</h5>
