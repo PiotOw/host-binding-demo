@@ -2,12 +2,23 @@
   parent works!
 </div>
 
+<h4>
+  Expected: child-component text-color to be blue when Input [blue] is set to true
+</h4>
+<h4>
+  Case: parent-component sets .blue class text-color to green and font-size to 24px
+</h4>
+<h4>
+  Issue: parent can override styles set inside the child component without the use of ng-deep
+</h4>
+
 <div class="content">
   <app-child class="child-component" [blue]="true"></app-child>
 </div>
+<hr>
 
-<!-- Expected: child-component text-color to be blue when Input [blue] is set to true -->
-
-<!-- Case: parent-component sets .blue class text-color to green and font-size to 24px -->
-
-<!-- Issue: parent can override styles set inside the child component without the use of ng-deep -->
+<app-child-no-binding class="child-component" [blue]="true"></app-child-no-binding>
+<h4>
+  Without HostBinding parent can't override styles set inside the child component without the use of ng-deep, because of
+  view encapsulation
+</h4>
