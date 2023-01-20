@@ -1,5 +1,13 @@
-<p>
-parent works!
-</p>
+<div>
+  parent works!
+</div>
 
-<app-child></app-child>
+<div class="content">
+  <app-child class="child-component" [blue]="true"></app-child>
+</div>
+
+<!-- Expected: child-component text-color to be blue when Input [blue] is set to true -->
+
+<!-- Case: parent-component sets .blue class text-color to green and font-size to 24px -->
+
+<!-- Issue: parent can override styles set inside the child component without the use of ng-deep -->
