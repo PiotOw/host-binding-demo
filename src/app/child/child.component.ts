@@ -1,6 +1,7 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 
-type ChildType = 'full' | 'inline'
+type ChildVariant = 'gradient' | 'warn' | 'success'
+type ChildBackgroundGradientVariant = 'happy' | 'sad'
 
 @Component({
   selector: 'app-child',
@@ -9,9 +10,15 @@ type ChildType = 'full' | 'inline'
 })
 export class ChildComponent implements OnInit {
 
-  @Input()
-  @HostBinding(`class`)
-    type: ChildType = 'full';
+  @Input() variant: ChildVariant = 'gradient';
+  @Input() backgroundGradientVariant: ChildBackgroundGradientVariant = 'sad'
+
+  @HostBinding('class') get hostClass(): string[] {
+    return [
+      this.variant,
+      this.backgroundGradientVariant,
+    ].filter(Boolean)
+  }
 
   constructor() { }
 
