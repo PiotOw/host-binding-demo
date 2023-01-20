@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
+
+type ChildType = 'full' | 'inline'
 
 @Component({
   selector: 'app-child',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child.component.scss']
 })
 export class ChildComponent implements OnInit {
+
+  @Input()
+  @HostBinding(`class`)
+    type: ChildType = 'full';
 
   constructor() { }
 

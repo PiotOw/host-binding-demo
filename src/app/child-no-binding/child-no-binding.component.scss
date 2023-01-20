@@ -1,19 +1,10 @@
-:host {
-  &.full {
-    display: block;
-    height: 100%;
-  }
-
-  &.inline {
-    display: inline-block;
-  }
-
+.child {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   background: radial-gradient(
-      lightgreen 0%,
+      slategray 0%,
       white 100%
   );
   padding: 16px;
