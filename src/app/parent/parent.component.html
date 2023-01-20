@@ -10,32 +10,30 @@
   If we had styling component: radial-gradient as a background with text in it
 </p>
 <h3>
-  -- Display
+  -- Position (and dimensions)
 </h3>
 <h5>
-  normally we want it to take whole available space
+  if we wanted to have the ability to position the component once in top-right corner of a div or in bottom-left,
+  in HostBinding approach we would need to provide multi-type Input for position, with as many options as we ever need.
+  <p>
+    maybe top-center will be needed as well? what if we want to also be able to set exact location in px?
+  </p>
+  <p>
+    The type of child's 'position' Input would most likely grow enormous.
+  </p>
+  <p>
+    The same goes for dimensions of the element, as long as we dont need to make some additional calculations on the value
+    like for example in spinner-components, the Angular Input for this is completely redundant
+  </p>
 </h5>
 <div class="wrapper--available-space">
-  <app-child>child works!</app-child>
+  <app-child [position]="'top-right'">child works!</app-child>
 </div>
 
 <h5>
-  But sometimes we want it to act like normal text in a block of text:
+  It is counter-intuitive, we are supposed to position child component by modifying parent's stylesheet
 </h5>
-<span>
-  this is a <app-child [type]="'inline'">child component!</app-child> which is awesome
-</span>
-<hr>
-<p>
-  It can work with HostBinding('class') but we can achieve the same result by setting the app-child style inside parent component
-</p>
 
 <div class="wrapper--available-space">
-  <app-child-no-binding>child works!</app-child-no-binding>
+  <app-child-no-binding class="child--top-right">child no binding works!</app-child-no-binding>
 </div>
-
-<span>
-  this is a <app-child-no-binding class="gradient-text--inline">child component!</app-child-no-binding> which is awesome
-</span>
-
-<h5>The positioning of a child should be parent's responsibility</h5>

@@ -1,9 +1,12 @@
 .wrapper--available-space {
-  height: 100px;
-  width: 100px;
+  position: relative;
+  height: 200px;
+  width: 200px;
   border: 2px black solid;
 }
 
-.gradient-text--inline {
-  display: inline-block;
+.child--top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

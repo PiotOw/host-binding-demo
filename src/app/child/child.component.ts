@@ -1,6 +1,6 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
 
-type ChildType = 'full' | 'inline'
+type ChildPosition = 'relative' | 'top-right' | 'bottom-left'
 
 @Component({
   selector: 'app-child',
@@ -11,7 +11,7 @@ export class ChildComponent implements OnInit {
 
   @Input()
   @HostBinding(`class`)
-    type: ChildType = 'full';
+    position: ChildPosition = 'relative';
 
   constructor() { }
 
