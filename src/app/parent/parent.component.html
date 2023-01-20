@@ -8,9 +8,10 @@ parent works!
 
 <!-- Case: parent-component assigns .blue class to child-component -->
 
-<!-- Issue: parent can set the child "type" to .blue without the use of Angular Input -->
+<!-- Behavior: there is single source of truth: -->
+<!-- only way for parent to communicate with child is through Angular Inputs, which we can control, quickly find -->
 
-<!-- Setbacks: -->
-<!-- 1. problems with refactors (like changing the class name) -->
-<!-- 2. child component has misleading information about its state -->
-<!-- 3. if child component's Input is a setter, it works horribly -->
+<!-- Setbacks fixed: -->
+<!-- 1. problems with refactors (like changing the class name) - relevant classnames only appear inside the component -->
+<!-- 2. child component has misleading information about its state - component is completely self-contained - only component can change its state -->
+<!-- 3. if child component's Input is a setter, it works horribly - all information provided by Input is complete and can't be overridden by parent -->
