@@ -1,0 +1,27 @@
+.child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: radial-gradient(
+      slategray 0%,
+      white 100%
+  );
+  padding: 16px;
+
+  .child-text {
+    width: fit-content;
+    background: linear-gradient(
+        to right,
+        red 0%,
+        blue 20%,
+        yellow 40%,
+        pink 60%,
+        salmon 80%,
+        black 100%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+  }
+}
