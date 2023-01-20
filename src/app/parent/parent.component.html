@@ -1,5 +1,16 @@
-<p>
+<div>
 parent works!
-</p>
+</div>
 
-<app-child></app-child>
+<app-child class="blue" [blue]="false"></app-child>
+
+<!-- Expected: child-component text-color to be default (red) when Input [blue] is set to false -->
+
+<!-- Case: parent-component assigns .blue class to child-component -->
+
+<!-- Issue: parent can set the child "type" to .blue without the use of Angular Input -->
+
+<!-- Setbacks: -->
+<!-- 1. problems with refactors (like changing the class name) -->
+<!-- 2. child component has misleading information about its state -->
+<!-- 3. if child component's Input is a setter, it works horribly -->
